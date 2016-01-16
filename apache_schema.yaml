@@ -1,0 +1,880 @@
+# Created using puppet-retrospec - https://github.com/nwops/puppet-retrospec
+# This schema file can be used to validate hiera data"
+# http://www.kuwata-lab.com/kwalify/ruby/users-guide.01.html#schema
+# To validate your hiera data against this schema install the kwalify gem
+# 1. gem install kwalify
+# 2. kwalify -lf apache_schema.yaml hiera_data_file.yaml
+# By default this schema is generic and only covers basic parameter types.
+# You should update the schema to match your expected data types in your puppet classes
+# or anywhere else you call hiera using the hiera() function.
+
+--- 
+  type: map
+  mapping: 
+    "apache::default_confd_files::all": 
+      type: bool
+      required: false
+    "apache::default_mods::all": 
+      type: bool
+      required: false
+    "apache::default_mods::mods": 
+      type: any
+      required: false
+    "apache::default_mods::apache_version": 
+      type: any
+      required: false
+    "apache::default_mods::use_systemd": 
+      type: any
+      required: false
+    "apache::apache_name": 
+      type: any
+      required: false
+    "apache::service_name": 
+      type: any
+      required: false
+    "apache::default_mods": 
+      type: bool
+      required: false
+    "apache::default_vhost": 
+      type: bool
+      required: false
+    "apache::default_charset": 
+      type: any
+      required: false
+    "apache::default_confd_files": 
+      type: bool
+      required: false
+    "apache::default_ssl_vhost": 
+      type: bool
+      required: false
+    "apache::default_ssl_cert": 
+      type: any
+      required: false
+    "apache::default_ssl_key": 
+      type: any
+      required: false
+    "apache::default_ssl_chain": 
+      type: any
+      required: false
+    "apache::default_ssl_ca": 
+      type: any
+      required: false
+    "apache::default_ssl_crl_path": 
+      type: any
+      required: false
+    "apache::default_ssl_crl": 
+      type: any
+      required: false
+    "apache::default_ssl_crl_check": 
+      type: any
+      required: false
+    "apache::default_type": 
+      type: str
+      required: false
+    "apache::ip": 
+      type: any
+      required: false
+    "apache::service_enable": 
+      type: bool
+      required: false
+    "apache::service_manage": 
+      type: bool
+      required: false
+    "apache::service_ensure": 
+      type: str
+      required: false
+    "apache::service_restart": 
+      type: any
+      required: false
+    "apache::purge_configs": 
+      type: bool
+      required: false
+    "apache::purge_vhost_dir": 
+      type: any
+      required: false
+    "apache::purge_vdir": 
+      type: bool
+      required: false
+    "apache::serveradmin": 
+      type: str
+      required: false
+    "apache::sendfile": 
+      type: str
+      required: false
+    "apache::error_documents": 
+      type: bool
+      required: false
+    "apache::timeout": 
+      type: str
+      required: false
+    "apache::httpd_dir": 
+      type: any
+      required: false
+    "apache::server_root": 
+      type: any
+      required: false
+    "apache::conf_dir": 
+      type: any
+      required: false
+    "apache::confd_dir": 
+      type: any
+      required: false
+    "apache::vhost_dir": 
+      type: any
+      required: false
+    "apache::vhost_enable_dir": 
+      type: any
+      required: false
+    "apache::mod_dir": 
+      type: any
+      required: false
+    "apache::mod_enable_dir": 
+      type: any
+      required: false
+    "apache::mpm_module": 
+      type: any
+      required: false
+    "apache::lib_path": 
+      type: any
+      required: false
+    "apache::conf_template": 
+      type: any
+      required: false
+    "apache::servername": 
+      type: any
+      required: false
+    "apache::pidfile": 
+      type: any
+      required: false
+    "apache::manage_user": 
+      type: bool
+      required: false
+    "apache::manage_group": 
+      type: bool
+      required: false
+    "apache::user": 
+      type: any
+      required: false
+    "apache::group": 
+      type: any
+      required: false
+    "apache::keepalive": 
+      type: any
+      required: false
+    "apache::keepalive_timeout": 
+      type: any
+      required: false
+    "apache::max_keepalive_requests": 
+      type: any
+      required: false
+    "apache::logroot": 
+      type: any
+      required: false
+    "apache::logroot_mode": 
+      type: any
+      required: false
+    "apache::log_level": 
+      type: any
+      required: false
+    "apache::log_formats": 
+      type: map
+      required: false
+    "apache::ports_file": 
+      type: any
+      required: false
+    "apache::docroot": 
+      type: any
+      required: false
+    "apache::apache_version": 
+      type: any
+      required: false
+    "apache::server_tokens": 
+      type: str
+      required: false
+    "apache::server_signature": 
+      type: str
+      required: false
+    "apache::trace_enable": 
+      type: str
+      required: false
+    "apache::allow_encoded_slashes": 
+      type: any
+      required: false
+    "apache::package_ensure": 
+      type: str
+      required: false
+    "apache::use_optional_includes": 
+      type: any
+      required: false
+    "apache::use_systemd": 
+      type: any
+      required: false
+    "apache::mod::alias::apache_version": 
+      type: any
+      required: false
+    "apache::mod::alias::icons_options": 
+      type: str
+      required: false
+    "apache::mod::alias::icons_path": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_login_url": 
+      type: any
+      required: true
+    "apache::mod::auth_cas::cas_validate_url": 
+      type: any
+      required: true
+    "apache::mod::auth_cas::cas_cookie_path": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_version": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_debug": 
+      type: str
+      required: false
+    "apache::mod::auth_cas::cas_validate_depth": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_certificate_path": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_proxy_validate_url": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_root_proxied_as": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_cookie_entropy": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_timeout": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_idle_timeout": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_cache_clean_interval": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_cookie_domain": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_cookie_http_only": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::cas_authoritative": 
+      type: any
+      required: false
+    "apache::mod::auth_cas::suppress_warning": 
+      type: bool
+      required: false
+    "apache::mod::auth_mellon::mellon_cache_size": 
+      type: any
+      required: false
+    "apache::mod::auth_mellon::mellon_lock_file": 
+      type: any
+      required: false
+    "apache::mod::auth_mellon::mellon_post_directory": 
+      type: any
+      required: false
+    "apache::mod::auth_mellon::mellon_cache_entry_size": 
+      type: any
+      required: false
+    "apache::mod::auth_mellon::mellon_post_ttl": 
+      type: any
+      required: false
+    "apache::mod::auth_mellon::mellon_post_size": 
+      type: any
+      required: false
+    "apache::mod::auth_mellon::mellon_post_count": 
+      type: any
+      required: false
+    "apache::mod::authn_core::apache_version": 
+      type: any
+      required: false
+    "apache::mod::authnz_ldap::verifyServerCert": 
+      type: bool
+      required: false
+    "apache::mod::dav_svn::authz_svn_enabled": 
+      type: bool
+      required: false
+    "apache::mod::deflate::types": 
+      type: seq
+      required: false
+    "apache::mod::deflate::notes": 
+      type: map
+      required: false
+    "apache::mod::dir::dir": 
+      type: str
+      required: false
+    "apache::mod::dir::indexes": 
+      type: seq
+      required: false
+    "apache::mod::disk_cache::cache_root": 
+      type: any
+      required: false
+    "apache::mod::event::startservers": 
+      type: str
+      required: false
+    "apache::mod::event::maxclients": 
+      type: str
+      required: false
+    "apache::mod::event::minsparethreads": 
+      type: str
+      required: false
+    "apache::mod::event::maxsparethreads": 
+      type: str
+      required: false
+    "apache::mod::event::threadsperchild": 
+      type: str
+      required: false
+    "apache::mod::event::maxrequestsperchild": 
+      type: str
+      required: false
+    "apache::mod::event::serverlimit": 
+      type: str
+      required: false
+    "apache::mod::event::apache_version": 
+      type: any
+      required: false
+    "apache::mod::event::threadlimit": 
+      type: str
+      required: false
+    "apache::mod::event::listenbacklog": 
+      type: str
+      required: false
+    "apache::mod::event::maxrequestworkers": 
+      type: str
+      required: false
+    "apache::mod::event::maxconnectionsperchild": 
+      type: str
+      required: false
+    "apache::mod::expires::expires_active": 
+      type: bool
+      required: false
+    "apache::mod::expires::expires_default": 
+      type: any
+      required: false
+    "apache::mod::expires::expires_by_type": 
+      type: any
+      required: false
+    "apache::mod::fcgid::options": 
+      type: map
+      required: false
+    "apache::mod::geoip::enable": 
+      type: bool
+      required: false
+    "apache::mod::geoip::db_file": 
+      type: str
+      required: false
+    "apache::mod::geoip::flag": 
+      type: str
+      required: false
+    "apache::mod::geoip::output": 
+      type: str
+      required: false
+    "apache::mod::geoip::enable_utf8": 
+      type: any
+      required: false
+    "apache::mod::geoip::scan_proxy_headers": 
+      type: any
+      required: false
+    "apache::mod::geoip::scan_proxy_header_field": 
+      type: any
+      required: false
+    "apache::mod::geoip::use_last_xforwarededfor_ip": 
+      type: any
+      required: false
+    "apache::mod::info::allow_from": 
+      type: seq
+      required: false
+    "apache::mod::info::apache_version": 
+      type: any
+      required: false
+    "apache::mod::info::restrict_access": 
+      type: bool
+      required: false
+    "apache::mod::itk::startservers": 
+      type: str
+      required: false
+    "apache::mod::itk::minspareservers": 
+      type: str
+      required: false
+    "apache::mod::itk::maxspareservers": 
+      type: str
+      required: false
+    "apache::mod::itk::serverlimit": 
+      type: str
+      required: false
+    "apache::mod::itk::maxclients": 
+      type: str
+      required: false
+    "apache::mod::itk::maxrequestsperchild": 
+      type: str
+      required: false
+    "apache::mod::itk::apache_version": 
+      type: any
+      required: false
+    "apache::mod::ldap::apache_version": 
+      type: any
+      required: false
+    "apache::mod::mime::mime_support_package": 
+      type: any
+      required: false
+    "apache::mod::mime::mime_types_config": 
+      type: any
+      required: false
+    "apache::mod::mime_magic::magic_file": 
+      type: any
+      required: false
+    "apache::mod::negotiation::force_language_priority": 
+      type: str
+      required: false
+    "apache::mod::negotiation::language_priority": 
+      type: seq
+      required: false
+    "apache::mod::nss::transfer_log": 
+      type: any
+      required: false
+    "apache::mod::nss::error_log": 
+      type: any
+      required: false
+    "apache::mod::nss::passwd_file": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::inherit_vhost_config": 
+      type: str
+      required: false
+    "apache::mod::pagespeed::filter_xhtml": 
+      type: bool
+      required: false
+    "apache::mod::pagespeed::cache_path": 
+      type: str
+      required: false
+    "apache::mod::pagespeed::log_dir": 
+      type: str
+      required: false
+    "apache::mod::pagespeed::memcache_servers": 
+      type: seq
+      required: false
+    "apache::mod::pagespeed::rewrite_level": 
+      type: str
+      required: false
+    "apache::mod::pagespeed::disable_filters": 
+      type: seq
+      required: false
+    "apache::mod::pagespeed::enable_filters": 
+      type: seq
+      required: false
+    "apache::mod::pagespeed::forbid_filters": 
+      type: seq
+      required: false
+    "apache::mod::pagespeed::rewrite_deadline_per_flush_ms": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::additional_domains": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::file_cache_size_kb": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::file_cache_clean_interval_ms": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::lru_cache_per_process": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::lru_cache_byte_limit": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::css_flatten_max_bytes": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::css_inline_max_bytes": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::css_image_inline_max_bytes": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::image_inline_max_bytes": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::js_inline_max_bytes": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::css_outline_min_bytes": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::js_outline_min_bytes": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::inode_limit": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::image_max_rewrites_at_once": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::num_rewrite_threads": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::num_expensive_rewrite_threads": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::collect_statistics": 
+      type: str
+      required: false
+    "apache::mod::pagespeed::statistics_logging": 
+      type: str
+      required: false
+    "apache::mod::pagespeed::allow_view_stats": 
+      type: seq
+      required: false
+    "apache::mod::pagespeed::allow_pagespeed_console": 
+      type: seq
+      required: false
+    "apache::mod::pagespeed::allow_pagespeed_message": 
+      type: seq
+      required: false
+    "apache::mod::pagespeed::message_buffer_size": 
+      type: any
+      required: false
+    "apache::mod::pagespeed::additional_configuration": 
+      type: map
+      required: false
+    "apache::mod::pagespeed::apache_version": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_conf_file": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_conf_package_file": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_high_performance": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_pool_idle_time": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_max_requests": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_spawn_method": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_stat_throttle_rate": 
+      type: any
+      required: false
+    "apache::mod::passenger::rack_autodetect": 
+      type: any
+      required: false
+    "apache::mod::passenger::rails_autodetect": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_root": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_ruby": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_default_ruby": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_max_pool_size": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_min_instances": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_use_global_queue": 
+      type: any
+      required: false
+    "apache::mod::passenger::passenger_app_env": 
+      type: any
+      required: false
+    "apache::mod::passenger::mod_package": 
+      type: any
+      required: false
+    "apache::mod::passenger::mod_package_ensure": 
+      type: any
+      required: false
+    "apache::mod::passenger::mod_lib": 
+      type: any
+      required: false
+    "apache::mod::passenger::mod_lib_path": 
+      type: any
+      required: false
+    "apache::mod::passenger::mod_id": 
+      type: any
+      required: false
+    "apache::mod::passenger::mod_path": 
+      type: any
+      required: false
+    "apache::mod::peruser::minspareprocessors": 
+      type: str
+      required: false
+    "apache::mod::peruser::minprocessors": 
+      type: str
+      required: false
+    "apache::mod::peruser::maxprocessors": 
+      type: str
+      required: false
+    "apache::mod::peruser::maxclients": 
+      type: str
+      required: false
+    "apache::mod::peruser::maxrequestsperchild": 
+      type: str
+      required: false
+    "apache::mod::peruser::idletimeout": 
+      type: str
+      required: false
+    "apache::mod::peruser::expiretimeout": 
+      type: str
+      required: false
+    "apache::mod::peruser::keepalive": 
+      type: str
+      required: false
+    "apache::mod::php::package_name": 
+      type: any
+      required: false
+    "apache::mod::php::package_ensure": 
+      type: str
+      required: false
+    "apache::mod::php::path": 
+      type: any
+      required: false
+    "apache::mod::php::extensions": 
+      type: seq
+      required: false
+    "apache::mod::php::content": 
+      type: any
+      required: false
+    "apache::mod::php::template": 
+      type: str
+      required: false
+    "apache::mod::php::source": 
+      type: any
+      required: false
+    "apache::mod::php::root_group": 
+      type: any
+      required: false
+    "apache::mod::prefork::startservers": 
+      type: str
+      required: false
+    "apache::mod::prefork::minspareservers": 
+      type: str
+      required: false
+    "apache::mod::prefork::maxspareservers": 
+      type: str
+      required: false
+    "apache::mod::prefork::serverlimit": 
+      type: str
+      required: false
+    "apache::mod::prefork::maxclients": 
+      type: str
+      required: false
+    "apache::mod::prefork::maxrequestsperchild": 
+      type: str
+      required: false
+    "apache::mod::prefork::apache_version": 
+      type: any
+      required: false
+    "apache::mod::proxy::proxy_requests": 
+      type: str
+      required: false
+    "apache::mod::proxy::allow_from": 
+      type: any
+      required: false
+    "apache::mod::proxy::apache_version": 
+      type: any
+      required: false
+    "apache::mod::proxy_connect::apache_version": 
+      type: any
+      required: false
+    "apache::mod::remoteip::header": 
+      type: str
+      required: false
+    "apache::mod::remoteip::proxy_ips": 
+      type: seq
+      required: false
+    "apache::mod::remoteip::proxies_header": 
+      type: any
+      required: false
+    "apache::mod::remoteip::trusted_proxy_ips": 
+      type: any
+      required: false
+    "apache::mod::remoteip::apache_version": 
+      type: any
+      required: false
+    "apache::mod::reqtimeout::timeouts": 
+      type: seq
+      required: false
+    "apache::mod::rpaf::sethostname": 
+      type: bool
+      required: false
+    "apache::mod::rpaf::proxy_ips": 
+      type: seq
+      required: false
+    "apache::mod::rpaf::header": 
+      type: str
+      required: false
+    "apache::mod::security::crs_package": 
+      type: any
+      required: false
+    "apache::mod::security::activated_rules": 
+      type: any
+      required: false
+    "apache::mod::security::modsec_dir": 
+      type: any
+      required: false
+    "apache::mod::security::modsec_secruleengine": 
+      type: any
+      required: false
+    "apache::mod::security::allowed_methods": 
+      type: str
+      required: false
+    "apache::mod::security::content_types": 
+      type: str
+      required: false
+    "apache::mod::security::restricted_extensions": 
+      type: str
+      required: false
+    "apache::mod::security::restricted_headers": 
+      type: str
+      required: false
+    "apache::mod::shib::suppress_warning": 
+      type: bool
+      required: false
+    "apache::mod::ssl::ssl_compression": 
+      type: bool
+      required: false
+    "apache::mod::ssl::ssl_cryptodevice": 
+      type: str
+      required: false
+    "apache::mod::ssl::ssl_options": 
+      type: seq
+      required: false
+    "apache::mod::ssl::ssl_openssl_conf_cmd": 
+      type: any
+      required: false
+    "apache::mod::ssl::ssl_cipher": 
+      type: str
+      required: false
+    "apache::mod::ssl::ssl_honorcipherorder": 
+      type: str
+      required: false
+    "apache::mod::ssl::ssl_protocol": 
+      type: seq
+      required: false
+    "apache::mod::ssl::ssl_pass_phrase_dialog": 
+      type: str
+      required: false
+    "apache::mod::ssl::ssl_random_seed_bytes": 
+      type: str
+      required: false
+    "apache::mod::ssl::ssl_sessioncachetimeout": 
+      type: str
+      required: false
+    "apache::mod::ssl::apache_version": 
+      type: any
+      required: false
+    "apache::mod::ssl::package_name": 
+      type: any
+      required: false
+    "apache::mod::status::allow_from": 
+      type: seq
+      required: false
+    "apache::mod::status::extended_status": 
+      type: str
+      required: false
+    "apache::mod::status::apache_version": 
+      type: any
+      required: false
+    "apache::mod::status::status_path": 
+      type: str
+      required: false
+    "apache::mod::userdir::home": 
+      type: str
+      required: false
+    "apache::mod::userdir::dir": 
+      type: str
+      required: false
+    "apache::mod::userdir::disable_root": 
+      type: bool
+      required: false
+    "apache::mod::userdir::apache_version": 
+      type: any
+      required: false
+    "apache::mod::userdir::options": 
+      type: seq
+      required: false
+    "apache::mod::version::apache_version": 
+      type: any
+      required: false
+    "apache::mod::worker::startservers": 
+      type: str
+      required: false
+    "apache::mod::worker::maxclients": 
+      type: str
+      required: false
+    "apache::mod::worker::minsparethreads": 
+      type: str
+      required: false
+    "apache::mod::worker::maxsparethreads": 
+      type: str
+      required: false
+    "apache::mod::worker::threadsperchild": 
+      type: str
+      required: false
+    "apache::mod::worker::maxrequestsperchild": 
+      type: str
+      required: false
+    "apache::mod::worker::serverlimit": 
+      type: str
+      required: false
+    "apache::mod::worker::threadlimit": 
+      type: str
+      required: false
+    "apache::mod::worker::listenbacklog": 
+      type: str
+      required: false
+    "apache::mod::worker::apache_version": 
+      type: any
+      required: false
+    "apache::mod::wsgi::wsgi_socket_prefix": 
+      type: any
+      required: false
+    "apache::mod::wsgi::wsgi_python_path": 
+      type: any
+      required: false
+    "apache::mod::wsgi::wsgi_python_home": 
+      type: any
+      required: false
+    "apache::mod::wsgi::package_name": 
+      type: any
+      required: false
+    "apache::mod::wsgi::mod_path": 
+      type: any
+      required: false
+    "apache::package::ensure": 
+      type: str
+      required: false
+    "apache::package::mpm_module": 
+      type: any
+      required: false
+    "apache::service::service_name": 
+      type: any
+      required: false
+    "apache::service::service_enable": 
+      type: bool
+      required: false
+    "apache::service::service_ensure": 
+      type: str
+      required: false
+    "apache::service::service_manage": 
+      type: bool
+      required: false
+    "apache::service::service_restart": 
+      type: any
+      required: false
