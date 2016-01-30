@@ -1,0 +1,31 @@
+# this schema is slightly different in that each class
+# would contain a mappping of parameters which could be easier
+# to iterate around instead of parsing the parameter name for the class
+# this would give me a easier time finding all the classes but adds a little
+# work when getting all the parameters for hiera validation.
+
+
+---
+  type: map
+  mapping:
+    hostclass:
+      type: map
+      mapping:
+        "apache::default_confd_files":
+          desc: 'apache default_confd_files class'
+          type: map
+          mapping:
+            "apache::default_confd_files::all":
+              desc: 'description of what this parameter does'
+              type: bool
+              required: false
+        "apache::default_mods":
+          type: map
+          desc: 'apache default mods class'
+          mapping:
+            "apache::default_mods::all":
+              type: bool
+              required: false
+            "apache::default_mods::mods":
+              type: any
+              required: false
